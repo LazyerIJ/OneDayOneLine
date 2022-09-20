@@ -1,54 +1,109 @@
 {% extends "base.html" %}
 {% block content %}
+<script type="text/javascript">
+    function checkPasswordMatch() {
+        var password = $("#password").val();
+        var confirmPassword = $("#re-password").val();
+
+        if (password != confirmPassword)
+            $("#errorMessage").html("비밀번호가 동일하지 않습니다.");
+        else
+            $("#errorMessage").html("비밀번호가 동일합니다.");
+    }
+    $(document).ready(function () {
+       $("#password, #re-password").keyup(checkPasswordMatch);
+    });
+
+    var userFlag = false;
+    var passFlag = false;
+    var emailFlag = false;
+
+    function checkUsername(){
+      var name = document.forms["RegistrationForm"]["username"].value;
+      if(name == ""){
+        userFlag = true;
+      }
+    }
+
+    function checkPassword(){
+      var password = document.forms["RegistrationForm"]["password"].value;
+      if(password == ""){
+        passFlag = true;
+      }
+    }
+
+    function checkEmail(){
+      var email = document.forms["RegistrationForm"]["useremail"].value;
+      if(email == ""){
+        emailFlag = true;
+      }
+    }
+
+    function formIsValid(){
+      checkUsername();
+      if (userFlag){
+        $("#errorMessage").html("사용자 이름을 입력해주세요");
+       return false;
+      }
+      checkPassword();
+      if (passFlag){
+        $("#errorMessage").html("비밀번호를 입력해주세요");
+       return false;
+      }
+      checkEmail();
+      if (emailFlag){
+        $("#errorMessage").html("이메일을 입력해주세요");
+       return false;
+      }
+    }
+</script>
 <div id="main" style>
     <article id="contact" class="panel" style>
         <header>
             <h2>회원가입</h2>
         </header>
-        <div class="row mt-5">
-            <div class="col-12">
-                {{error}}   <!--views.py의 res_data['error']와 연결됨-->
-            </div>
-        </div>
-        <form action="." method="POST">
+        <form action="." method="POST" onsubmit="return formIsValid()" class="RegistrationForm" name="RegistrationForm">
             <div>
                 <!--https://getbootstrap.com/docs/4.3/components/forms/ 에서 Overview-->
                 <div class="row">
                     {% csrf_token %}    <!--다른 곳에서 호출할 수 없게 막는 기능, django에서는 기본값이라 안쓰면 에러남-->
                     <div class="col-6 col-12-medium">
-                        <label for="username">사용자 이름</label>
+                        <label for="username">ID</label>
                         <input type="text"
                                class="form-control"
                                id="username"
-                               placeholder="사용자 이름"
+                               placeholder="ID"
                                name="username">
                     </div>
                     <div class="col-6 col-12-medium">
-                        <label for="useremail">사용자 이메일</label>
+                        <label for="useremail">Email</label>
                         <input type="email"
                                class="form-control"
                                id="useremail"
-                               placeholder="사용자 이메일"
+                               placeholder="Email"
                                name="useremail">
                     </div>
                     <div class="col-12">
-                        <label for="password">비밀번호</label>
+                        <label for="password">Password</label>
                         <input type="password"
                                class="form-control"
                                id="password"
-                               placeholder="비밀번호"
+                               placeholder="Password"
                                name="password">
                     </div>
                     <div class="col-12">
-                        <label for="re-password">비밀번호 확인</label>
+                        <label for="re-password">Password check</label>
                         <input type="password"
                                class="form-control"
                                id="re-password"
-                               placeholder="비밀번호 확인"
+                               placeholder="Password check"
                                name="re-password">
                     </div>
+                    <p id="errorMessage" class="animation">
+                        {{error}}   <!--views.py의 res_data['error']와 연결됨-->
+                    <p>
                     <div class="col-12">
-                        <input type="submit" valud="등록">
+                        <input type="submit" value="Sign-Up">
                     </div>
 
                 </div>

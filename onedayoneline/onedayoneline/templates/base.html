@@ -1,20 +1,30 @@
 <!DOCTYPE html>
-{%load static%}
+{% load static %}
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/odol.css' %}">
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/js/browser.min.js' %}"></script>
+    <script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+    <script src="{% static 'assets/js/util.js' %}"></script>
 </head>
 
 <body class>
     <div id="wrapper">
         {% include "nav.html" %}
-        {% block content %}{% endblock %}
+        {% block content %}
+        {% endblock %}
     </div>
 </body>
 
 <footer>
+    <div id="footer">
+    {% include "footer.html" %}
+    </div>
 </footer>
 
 </html>
