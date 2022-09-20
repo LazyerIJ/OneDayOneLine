@@ -1,0 +1,11 @@
+# vs
+.idea
+.vscode
+
+# cache__pycache__
+*.pyc
+.pytest_cache
+# django db
+migrations
+# log
+*.log
