@@ -1,4 +1,24 @@
-<h1><a href="{% url 'index' %}">하루 한줄</a></h1>
-<h2>{{ post.title_text }}</h2>
-<h5>{{ post.pub_date }}</h5>
-{{ post.content_text }}
+{% extends "base.html" %}
+{% block content %}
+<div id="main" style>
+    <article id="home" class="panel" style>
+    <h2>{{ post.title_text }}</h2>
+        <section>
+            <div class="row">
+                <div class="col-12">
+                    <p>{{ post.pub_date }}</p>
+                </div>
+                <div class="col-12">
+                    {{ post.content_text }}
+                </div>
+                <div>
+                        <p>
+                            <a href="{% url 'posts:update' post.id %}">수정</a>
+                            <a href="{% url 'posts:delete' post.id %}">삭제</a>
+                        </p>
+                </div>
+            </div>
+        </section>
+    </article>
+</div>
+{% endblock %}

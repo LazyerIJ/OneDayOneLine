@@ -26,17 +26,24 @@ p.small_alarm {
     font-size: 60%;
 }
 
-.header{
-    position: relative;
+.header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.header_info{
+.header_nav {
+    
+}
+
+.header_info {
     padding: 1em;
     margin: 1em;
     float: right;
 }
 
-.header_title{
+.header_title {
     padding: 1em;
     margin: 1em;
     float: left;
