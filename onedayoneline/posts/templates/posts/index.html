@@ -1,0 +1,16 @@
+<h1><a href="{% url 'index' %}">하루 한줄</a></h1>
+<a href="{% url 'create' %}">새글쓰기</a>
+{% if post_list %}
+    <ul>
+    {% for post in post_list %}
+        <li><a href="{% url 'detail' post.id %}">{{ post.title_text }}</a>&nbsp;&nbsp;&nbsp;
+            {{ post.pub_date }}&nbsp;&nbsp;
+            <a href="{% url 'update' post.id %}">수정</a>&nbsp;&nbsp;
+            <a href="{% url 'delete' post.id %}">삭제</a>
+        </li>
+        <br>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No posts are available.</p>
+{% endif %}

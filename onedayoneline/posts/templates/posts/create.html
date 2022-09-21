@@ -1,0 +1,8 @@
+<h1>하루 한줄</h1>
+<h2>새 글쓰기</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <br>
+    <input type="submit" value="등록하기">
+</form>

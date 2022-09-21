@@ -1,0 +1,10 @@
+# diarySite\posts\templates\posts\update.html
+
+<h1>Jisun's Diary</h1>
+<h2>수정하기</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <br>
+    <input type="submit" value="등록하기">
+</form>
