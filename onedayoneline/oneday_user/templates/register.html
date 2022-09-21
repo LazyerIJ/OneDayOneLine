@@ -60,7 +60,7 @@
 <div id="main" style>
     <article id="contact" class="panel" style>
         <header>
-            <h2>회원가입</h2>
+            <h3>OneDayOneLine</h3>
         </header>
         <form action="." method="POST" onsubmit="return formIsValid()" class="RegistrationForm" name="RegistrationForm">
             <div>
@@ -76,6 +76,12 @@
                                name="username">
                     </div>
                     <div class="col-6 col-12-medium">
+                        <p class="small_alarm">ID 중복 확인을 해주세요.</p>
+                    </div>
+                    <div class="col-6">
+                        <input type="submit" value="ID 중복 확인" class="left_small_btn">
+                    </div>
+                    <div class="col-12">
                         <label for="useremail">Email</label>
                         <input type="email"
                                class="form-control"
@@ -99,13 +105,14 @@
                                placeholder="Password check"
                                name="re-password">
                     </div>
-                    <p id="errorMessage" class="animation">
-                        {{error}}   <!--views.py의 res_data['error']와 연결됨-->
-                    <p>
-                    <div class="col-12">
-                        <input type="submit" value="Sign-Up">
+                    <div class="col-6 col-12-medium">
+                        <p id="errorMessage" class="animation small_alarm">
+                            {{error}}   <!--views.py의 res_data['error']와 연결됨-->
+                        <p>
                     </div>
-
+                    <div class="col-6 col-12-medium">
+                        <input type="submit" value="Sign-Up" class="right_normal_btn">
+                    </div>
                 </div>
             </div>
         </form>
