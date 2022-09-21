@@ -1,5 +1,17 @@
 <nav id="nav">
-	<a href="#" class="icon solid fa-home"><span>Home</span></a>
-	<a href="#diary" class="icon solid fa-folder"><span>Diary</span></a>
-	<a href="#register" class="icon solid fa-envelope active"><span>Register</span></a>
+	{% if request.resolver_match.view_name == 'posts:create' %}
+		<a href="#" class="icon solid fa-home"><span>Home</span></a>
+		<a href="{% url 'posts:index' %}" class="icon solid fa-folder active"><span>Diary</span></a>
+		<a href="{% url 'user:register' %}" class="icon solid fa-envelope"><span>Register</span></a>
+	{% endif %}
+	{% if request.resolver_match.view_name == 'posts:index' %}
+		<a href="#" class="icon solid fa-home"><span>Home</span></a>
+		<a href="{% url 'posts:index' %}" class="icon solid fa-folder active"><span>Diary</span></a>
+		<a href="{% url 'user:register' %}" class="icon solid fa-envelope"><span>Register</span></a>
+	{% endif %}
+	{% if request.resolver_match.view_name == 'user:register' %}
+		<a href="#" class="icon solid fa-home"><span>Home</span></a>
+		<a href="{% url 'posts:index' %}" class="icon solid fa-folder"><span>Diary</span></a>
+		<a href="{% url 'user:register' %}" class="icon solid fa-envelope active"><span>Register</span></a>
+	{% endif %}
 </nav>

@@ -25,3 +25,19 @@ p.small_alarm {
     margin: 0;
     font-size: 60%;
 }
+
+.header{
+    position: relative;
+}
+
+.header_info{
+    padding: 1em;
+    margin: 1em;
+    float: right;
+}
+
+.header_title{
+    padding: 1em;
+    margin: 1em;
+    float: left;
+}
