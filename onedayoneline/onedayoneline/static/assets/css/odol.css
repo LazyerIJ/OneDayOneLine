@@ -1,0 +1,27 @@
+input.right_normal_btn {
+    position: absolute;
+    right: 0;
+}
+
+input.left_normal_btn {
+}
+
+input.left_small_btn {
+    height: 80%;
+    font-size: 60%;
+}
+
+input.right_small_btn {
+    position: absolute;
+    right: 0;
+    height: 80%;
+    font-size: 60%;
+}
+
+p.small_alarm {
+    position: absolute;
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 60%;
+}
