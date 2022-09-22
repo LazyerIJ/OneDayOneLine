@@ -9,12 +9,14 @@
                     <h3>수정하기</h3>
                 </header>
             </div>
-            <form method="post">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <br>
-                <input type="submit" value="등록하기">
-            </form>
+            <div class="col-12 col-12-medium col-12-small">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <br>
+                    <input type="submit" value="수정하기">
+                </form>
+            </div>
         </div>
     </section>
 </article>
