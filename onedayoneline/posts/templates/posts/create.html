@@ -1,17 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
-<div id="main" style>
-    <article id="contact" class="panel" style>
-        <header>
-            <h3>새 글쓰기</h3>
-        </header>
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <br>
-            <input type="submit" value="등록하기">
-        </form>
-    </article>
-</div>
-
+<article id="create" class="panel">
+    <section>
+        <div class="row">
+            <div class="col-12 col-12-medium col-12-small">
+                <header>
+                    <h3>일기쓰기</h3>
+                </header>
+            </div>
+            <div class="col-12 col-12-medium col-12-small">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <br>
+                    <input type="submit" value="등록하기" class="right_normal_btn">
+                </form>
+            </div>
+        </div>
+    </section>
+</article>
 {% endblock %}

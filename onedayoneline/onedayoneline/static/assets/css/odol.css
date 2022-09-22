@@ -13,15 +13,13 @@ input.left_small_btn {
 
 input.right_small_btn {
     position: absolute;
-    right: 0;
-    height: 80%;
-    font-size: 60%;
+    right: 3em;
 }
 
 p.small_alarm {
     position: absolute;
     bottom: 0;
-    padding: 0;
+    padding: 1;
     margin: 0;
     font-size: 60%;
 }
@@ -33,18 +31,7 @@ p.small_alarm {
     justify-content: space-between;
 }
 
-.header_nav {
-    
-}
-
-.header_info {
-    padding: 1em;
-    margin: 1em;
-    float: right;
-}
-
-.header_title {
-    padding: 1em;
-    margin: 1em;
-    float: left;
+a.normal_a {
+    color: inherit;
+    text-decoration: inherit;
 }

@@ -1,31 +1,33 @@
 {% extends "base.html" %}
 {% block content %}
-<div id="main" style>
-    <article id="home" class="panel" style>
-        <p>
-            <a href="{% url 'posts:create' %}">새글쓰기</a>
-        </p>
-        <section>
-            <div class="row">
-                {% if post_list %}
-                    {% for post in post_list %}
-                    <div class="col-6 col-12-medium col-12-small">
-                        <h3>
-                            <a href="{% url 'posts:detail' post.id %}">{{ post.title_text }}</a>
-                        </h3>
-                        <p>
-                            {{ post.pub_date }};
-                        </p>
-                        <p>
-                            {{ post.content_text }}
-                        </p>
-                    </div>
-                    {% endfor %}
-                {% else %}
-                <p>No posts are available.</p>
-                {% endif %}
+<article id="index" class="panel">
+    <section>
+        <div class="row">
+            <div class="col-12">
+                <header>
+                    <h3>일기목록</h3>
+                </header>
             </div>
-        </section>
-    </article>
-</div>
+            {% if post_list %}
+                {% for post in post_list %}
+                <div class="col-12 col-12-medium col-12-small">
+                    <a class="normal_a" href="{% url 'posts:detail' post.id %}">
+                    <h3>
+                        {{ post.title_text }}
+                    </h3>
+                    <p>
+                        {{ post.pub_date }};
+                    </p>
+                    <p>
+                        {{ post.content_text }}
+                    </p>
+                    </a>
+                </div>
+                {% endfor %}
+            {% else %}
+            <p>No posts are available.</p>
+            {% endif %}
+        </div>
+    </section>
+</article>
 {% endblock %}

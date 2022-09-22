@@ -36,9 +36,9 @@
 				var href = $(this).attr('href');
 
 				// Not a panel link? Bail.
-					if (href.charAt(0) != '#'
-					||	$panels.filter(href).length == 0)
-						return;
+					//if (href.charAt(0) != '#'
+					//||	$panels.filter(href).length == 0)
+					//  return;
 
 				// Prevent default.
 					event.preventDefault();

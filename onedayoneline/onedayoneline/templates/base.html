@@ -14,22 +14,21 @@
 </head>
 
 <body class>
-    <div class="header">
-        {% include "info.html" %}
-    </div>
-    <div class="nav">
-        {% include "nav.html" %}
-    </div>
     <div id="wrapper">
-        {% block content %}
-        {% endblock %}
+        <div class="header">
+            {% include "info.html" %}
+        </div>
+        <div class="nav">
+            {% include "nav.html" %}
+        </div>
+        <div id="main">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <div id="footer">
+            {% include "footer.html" %}
+        </div>
     </div>
 </body>
-
-<footer>
-    <div id="footer">
-    {% include "footer.html" %}
-    </div>
-</footer>
 
 </html>

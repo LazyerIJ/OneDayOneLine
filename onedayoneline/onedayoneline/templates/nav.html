@@ -1,22 +1,20 @@
 <nav id="nav">
-	{% if request.resolver_match.view_name == 'posts:create' %}
-		<a href="#" class="icon solid fa-home"><span>Home</span></a>
-		<a href="{% url 'posts:index' %}" class="icon solid fa-folder active"><span>Diary</span></a>
-		<a href="{% url 'user:register' %}" class="icon solid fa-envelope"><span>Register</span></a>
-	{% endif %}
-	{% if request.resolver_match.view_name == 'posts:index' %}
-		<a href="#" class="icon solid fa-home"><span>Home</span></a>
-		<a href="{% url 'posts:index' %}" class="icon solid fa-folder active"><span>Diary</span></a>
-		<a href="{% url 'user:register' %}" class="icon solid fa-envelope"><span>Register</span></a>
-	{% endif %}
-	{% if request.resolver_match.view_name == 'user:register' %}
-		<a href="#" class="icon solid fa-home"><span>Home</span></a>
-		<a href="{% url 'posts:index' %}" class="icon solid fa-folder"><span>Diary</span></a>
-		<a href="{% url 'user:register' %}" class="icon solid fa-envelope active"><span>Register</span></a>
-	{% endif %}
-	{% if request.resolver_match.view_name == 'posts:detail' %}
-		<a href="#" class="icon solid fa-home"><span>Home</span></a>
-		<a href="{% url 'posts:index' %}" class="icon solid fa-folder active"><span>Diary</span></a>
-		<a href="{% url 'user:register' %}" class="icon solid fa-envelope"><span>Register</span></a>
-	{% endif %}
+	<a href="{% url 'posts:index' %}" class="icon solid fa-home" id="home"><span>home</span></a>
+	<a href="{% url 'posts:create' %}" class="icon solid fa-folder" id="create"><span>index</span></a>
+	<a href="{% url 'user:register' %}" class="icon solid fa-envelope" id="register"><span>create</span></a>
 </nav>
+<script>
+var $href = document.getElementById("home").href;
+var $pathname = window.location.pathname;
+var $flag = $href.includes($pathname);
+$nav = $('#nav')
+$nav_links = $nav.children('a');
+
+for (var i=0; i<$nav_links.length; i++){
+	var nav_link = $nav_links[i];
+	var flag = nav_link.href.endsWith($pathname);
+	if (flag) {
+		nav_link.classList.add('active');
+	}
+}
+</script>
