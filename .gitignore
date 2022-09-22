@@ -7,5 +7,6 @@
 .pytest_cache
 # django db
 migrations
+db.sqlite3
 # log
 *.log
