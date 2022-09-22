@@ -22,7 +22,7 @@ def create(request):
         form = PostForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('index')
+            return redirect('posts:index')
         
     else:
         form = PostForm()
@@ -37,7 +37,7 @@ def update(request, post_id):
         form = PostForm(request.POST, instance=post)
         if form.is_valid():
             form.save()
-            return redirect('detail', post_id)
+            return redirect('posts:detail', post_id)
         
     else:
         form = PostForm(instance=post)
@@ -48,4 +48,4 @@ def update(request, post_id):
 def delete(request, post_id):
     post = Post.objects.get(pk=post_id)
     post.delete()
-    return redirect('index')
+    return redirect('posts:index')

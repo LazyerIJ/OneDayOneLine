@@ -8,16 +8,19 @@
         <section>
             <div class="row">
                 {% if post_list %}
-                <ul>
                     {% for post in post_list %}
-                    <li>
-                        <a href="{% url 'posts:detail' post.id %}">{{ post.title_text }}</a>&nbsp;&nbsp;&nbsp;
-                        {{ post.pub_date }}&nbsp;&nbsp;
-                        <a href="{% url 'posts:update' post.id %}">수정</a>&nbsp;&nbsp;
-                        <a href="{% url 'posts:delete' post.id %}">삭제</a>
-                    </li>
+                    <div class="col-6 col-12-medium col-12-small">
+                        <h3>
+                            <a href="{% url 'posts:detail' post.id %}">{{ post.title_text }}</a>
+                        </h3>
+                        <p>
+                            {{ post.pub_date }};
+                        </p>
+                        <p>
+                            {{ post.content_text }}
+                        </p>
+                    </div>
                     {% endfor %}
-                </ul>
                 {% else %}
                 <p>No posts are available.</p>
                 {% endif %}

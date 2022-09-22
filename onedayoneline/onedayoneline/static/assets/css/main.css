@@ -1309,6 +1309,7 @@ input, select, textarea {
 
 	body {
 		background-image: url("images/overlay.png");
+		background-color: #2a2929;
 		background-repeat: repeat, no-repeat;
 		background-size: auto, 100% 100%;
 		background-attachment: fixed;
@@ -1878,9 +1879,7 @@ input, select, textarea {
 	#wrapper {
 		width: 45em;
 		margin: 0 auto;
-		min-height: 100vh;
 		max-width: 100%;
-		padding: 4em 0;
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
@@ -1910,7 +1909,6 @@ input, select, textarea {
 		@media screen and (max-width: 1280px) {
 
 			#wrapper {
-				padding: 3em 0;
 				max-width: calc(100% - 6em);
 			}
 
@@ -2017,7 +2015,7 @@ input, select, textarea {
 						position: absolute;
 						top: 0;
 						left: 0;
-						background: url("images/overlay.png"), url("images/bg.jpg");
+						background: url("images/overlay.png");
 						width: 100%;
 						height: 100%;
 						z-index: 1;
@@ -2149,6 +2147,11 @@ input, select, textarea {
 		text-align: center;
 		padding: 2em 0 0 0;
 		font-size: 0.75em;
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+
 	}
 
 		#footer a {
@@ -2167,6 +2170,7 @@ input, select, textarea {
 		#footer .copyright {
 			list-style: none;
 			padding-left: 0;
+			margin-bottom: 0em;
 		}
 
 			#footer .copyright li {
