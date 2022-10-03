@@ -6,8 +6,9 @@
       <sourceFolder url="file://$MODULE_DIR$/onedayoneline" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/onedayoneline/oneday_user" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/onedayoneline/onedayoneline" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Python 3.7 (OneDayOneLine)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TestRunnerService">

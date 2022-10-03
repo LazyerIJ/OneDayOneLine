@@ -40,6 +40,16 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'posts',
     'oneday_user',
+    'accounts',
+    'django.contrib.sites',
+
+    #allauth
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
+    #provider
+    'allauth.socialaccount.providers.google'
 ]
 
 MIDDLEWARE = [
@@ -125,3 +135,11 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'onedayoneline', 'static')
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend'
+)
+
+SITE_ID = 1
+LOGIN_REDIRECT_URL = '/'
